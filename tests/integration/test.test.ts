@@ -1,21 +1,21 @@
-import supertest from "supertest"
-import app from "../../src/app"
+import supertest from 'supertest';
+import app from '../../src/app';
 
-import { closeConnection } from "../utils/database"
+import closeConnection from '../utils/database';
 
 beforeEach(() => {
   /* Clear database tables */
-})
+});
 
 afterAll(() => {
-  closeConnection()
-})
+  closeConnection();
+});
 
-describe("GET/test", () => {
+describe('GET/test', () => {
   it("Should return status code 200 and 'Hello world!'", async () => {
-    const res = await supertest(app).get("/test")
+    const res = await supertest(app).get('/test');
 
-    expect(res.status).toBe(200)
-    expect(res.text).toBe("Hello world!")
-  })
-})
+    expect(res.status).toBe(200);
+    expect(res.text).toBe('Hello world!');
+  });
+});

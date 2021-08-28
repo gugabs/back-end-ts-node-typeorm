@@ -1,22 +1,22 @@
-import express, { Request, Response } from "express"
-import cors from "cors"
+import express, { Request, Response } from 'express';
+import cors from 'cors';
 
-import "reflect-metadata"
-import "./setup"
+import 'reflect-metadata';
+import './setup';
 
-import connect from "./database/connection"
+import connect from './database/connection';
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-app.get("/test", (req: Request, res: Response) => {
-  res.status(200).send("Hello world!")
-})
+app.get('/test', (req: Request, res: Response) => {
+  res.status(200).send('Hello world!');
+});
 
-export async function connectDatabase() {
-  await connect()
+export async function connectDatabase(): Promise<void> {
+  await connect();
 }
 
-export default app
+export default app;
